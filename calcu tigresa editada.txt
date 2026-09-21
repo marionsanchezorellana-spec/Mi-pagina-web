@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de la Tigresa Voladora Gigante</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Fondo temático con imagen y tonos épicos */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: #fff;
+        }
+
+        .contenedor-calculadora {
+            background: rgba(20, 20, 25, 0.85);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(255, 120, 0, 0.37);
+            border: 2px solid #ffaa00;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+
+        h2 {
+            color: #ffaa00;
+            margin-top: 0;
+            font-size: 24px;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .icono-tigresa {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .campo {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #f0e6d2;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ffaa00;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input[type="number"]::placeholder {
+            color: #aaa;
+        }
+
+        input[type="number"]:focus {
+            border-color: #ff4500;
+            box-shadow: 0 0 8px rgba(255, 69, 0, 0.6);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(45deg, #ff8c00, #ff4500);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.5);
+        }
+
+        #resultado {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(255, 170, 0, 0.15);
+            border-radius: 8px;
+            border: 1px dashed #ffaa00;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffe680;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-calculadora">
+        <div class="icono-tigresa">🐅🕊️</div>
+        <h2>la Tigresa Voladora</h2>
+
+        <div class="campo">
+            <label for="numero1">Primer Poder (Número 1):</label>
+            <input type="number" id="numero1" placeholder="Ingresa el primer número">
+        </div>
+
+        <div class="campo">
+            <label for="numero2">Segundo Poder (Número 2):</label>
+            <input type="number" id="numero2" placeholder="Ingresa el segundo número">
+        </div>
+
+        <button onclick="calcularSuma()">⚡ Sumar Fuerza ⚡</button>
+
+        <div id="resultado">Esperando números...</div>
+    </div>
+
+    <script>
+        function calcularSuma() {
+            let num1 = document.getElementById("numero1").value;
+            let num2 = document.getElementById("numero2").value;
+
+            if (num1 === "" || num2 === "") {
+                document.getElementById("resultado").innerText = "⚠️ Ingrese ambos números";
+                return;
+            }
+
+            let suma = parseFloat(num1) + parseFloat(num2);
+            document.getElementById("resultado").innerText = "💥 Resultado Final: " + suma;
+        }
+    </script>
+
+</body>
+</html>
